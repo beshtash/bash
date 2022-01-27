@@ -1,0 +1,20 @@
+Jan 17 19:13:36 hazel NetworkManager[910]: <info>  [1642468416.8355] manager: NetworkManager state is now CONNECTED_SITE
+Jan 17 19:13:36 hazel systemd[1]: Starting Network Manager Script Dispatcher Service...
+Jan 17 19:13:36 hazel dbus-daemon[908]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service' requested by ':1.12' (uid=0 pid=910 comm="/usr/sbin/NetworkManager --no-daemon " label="unconfined")
+Jan 17 19:13:36 hazel dbus-daemon[908]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Jan 17 19:13:36 hazel systemd[1]: Started Network Manager Script Dispatcher Service.
+Jan 17 19:13:36 hazel whoopsie[1660]: [19:13:36] Cannot reach: https://daisy.ubuntu.com
+Jan 17 19:13:36 hazel whoopsie[1660]: [19:13:36] offline
+Jan 17 19:13:39 hazel NetworkManager[910]: <info>  [1642468419.9357] manager: NetworkManager state is now CONNECTED_GLOBAL
+Jan 17 19:13:39 hazel whoopsie[1660]: [19:13:39] Cannot reach: https://daisy.ubuntu.com
+Jan 17 19:13:39 hazel whoopsie[1660]: [19:13:39] The default IPv4 route is: /org/freedesktop/NetworkManager/ActiveConnection/5
+Jan 17 19:13:39 hazel whoopsie[1660]: [19:13:39] Not a paid data plan: /org/freedesktop/NetworkManager/ActiveConnection/5
+Jan 17 19:13:39 hazel whoopsie[1660]: [19:13:39] Found usable connection: /org/freedesktop/NetworkManager/ActiveConnection/5
+Jan 17 19:13:40 hazel whoopsie[1660]: [19:13:40] online
+Jan 17 19:13:49 hazel systemd[1]: NetworkManager-dispatcher.service: Succeeded.
+Jan 17 19:15:14 hazel dbus-daemon[1734]: [session uid=1000 pid=1734] Activating via systemd: service name='org.freedesktop.Tracker1' unit='tracker-store.service' requested by ':1.1' (uid=1000 pid=1731 comm="/usr/libexec/tracker-miner-fs " label="unconfined")
+Jan 17 19:15:14 hazel systemd[1723]: Starting Tracker metadata database store and lookup manager...
+Jan 17 19:15:14 hazel dbus-daemon[1734]: [session uid=1000 pid=1734] Successfully activated service 'org.freedesktop.Tracker1'
+Jan 17 19:15:14 hazel systemd[1723]: Started Tracker metadata database store and lookup manager.
+Jan 17 19:15:44 hazel tracker-store[516980]: OK
+Jan 17 19:15:44 hazel systemd[1723]: tracker-store.service: Succeeded.

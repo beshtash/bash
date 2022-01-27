@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for FN in $*
+do
+    echo $FN
+    echo "Changing $FN"
+    chmod 0750 $FN
+done

@@ -1,0 +1,105 @@
+emp.data
+Beth       4.00     0
+Dan        3.75     0
+Kathy      4.00     10
+Mark       5.00     20
+Mary       5.50     22
+Susie      4.25     18
+
+
+
+String concatenation
+awk '{ names = names $2 " " } END { print names }' emp.data
+
+Length of words
+awk '{ print , length() }' emp.data
+Beth 4
+Dan 3
+Kathy 5
+Mark 4
+Mary 4
+Susie 5
+
+Counting lines, words, and characters
+awk '{ nc = nc + length($0) + 1; nw = nw + NF; } END { print NR, "lines, ", nw, "words, " nc, "characters" }' emp.data
+
+If-Else statement
+awk '$2 > 2 { n = n + 1; pay = pay + $2 * $3 } END { if (n > 0) print n, "employees, total pay is", pay, "avarage pay is", pay/n; else print "no employees are paid more than $6/hour" }' emp.data 
+6 employees, total pay is 337.5 avarage pay is 56.25
+
+For statement
+awk -f interest2 data
+
+data
+
+1000 .5 5
+1000 .6 6
+1000 .7 7
+
+# interest2 - compute compound interest
+# input: amount rate years
+# output: compounded value at the end each year
+
+{  for (i = 1; i <= $3; i = i + 1)
+      printf("\t%.2f\n", $1 * (1 + $2) ^ i)
+}
+
+While statement
+
+# intererst1
+
+{ i = 1
+  while (i <= $3) {
+     printf("\t%.2f\n", $1 * (1 + $2) ^ i)
+     i = i + 1
+  }
+}
+
+awk -f interest1 data
+
+Arrays
+awk '{ line[NR] = $0}  END { i = NR; while (i > 0) { print line[i]; i = i -1 } }' emp.data
+Susie      4.25     18
+Mary       5.50     22
+Mark       5.00     20
+Kathy      4.00     10
+Dan        3.75     0
+Beth       4.00     0
+
+For statement
+{ line[NR] = $0 }
+
+END { for (i = NR; i > 0; i = i -1)
+        print line[i]
+}
+
+BEGIN and END
+awk 'BEGIN {FS = " "; printf("%10s %6s %5s  %s\n\n", "COUNTRY", "AREA", "POP", "CONTINENT")}{printf("%10s %6d %5d   %s\n", $1, $2, $3, $4); area = area + $2; pop = pop + $3}; END {printf("\n%10s %6d %5d\n", "TOTAL", area, pop)}' countries
+   COUNTRY   AREA   POP  CONTINENT
+
+      USSR   8649   275   Asia
+    Canada   3852    25   North
+     China   3705  1032   Asia
+       USA   3615   237   North
+    Brazil   3286   134   South
+     India   1267   746   Asia
+    Mexico    762    78   North
+    France    211    55   Europe
+     Japan    144   120   Asia
+   Germany     96    61   Europe
+   England     94    56   Europe
+
+     TOTAL  25681  2819
+Arrays
+awk '/Asia/ { pop["Asia"] += $3 }; /Europe/ { pop["Europe"] += $3 }; END { print "Asian population is", pop["Asia"], "million."; print "European population is", pop["Europe"], "million." }' countries
+Asian population is 2173 million.
+European population is 172 million
+
+awk '{ x[NR] = $0 }; END { for (i = NR; i > 0; i--) print x[i] }' emp.data
+Susie      4.25     18
+Mary       5.50     22
+Mark       5.00     20
+Kathy      4.00     10
+Dan        3.75     0
+Beth       4.00     0
+
