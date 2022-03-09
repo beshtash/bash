@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Author: Dastan Torokul
+# Date Created: 03/09/2022
+# Date Modified: 03/09/2022
+
+# Description: Backs up 'Documents' folder.
+
+# Usage: ./backup_script
+
+tar -cvf ~/Workspace/bash/documents_backup_"$(date +%d-%m-%Y_%H-%M-%S)" ~/Documents 2> /dev/null
+exit 0
+
