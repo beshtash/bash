@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# Author: Dastan Torokul
+# Date Created: 03/08/2022
+# Last Modified: 03/08/2022
+
+# Description
+# Prints "This is my first script."
+
+# Usage
+# our_first_script
+
+echo "This is my first script."
+exit 0
