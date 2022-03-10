@@ -8,6 +8,13 @@
 
 # Usage: ./backup_script
 
-tar -cvf ~/Workspace/bash/documents_backup_"$(date +%d-%m-%Y_%H-%M-%S)" ~/Documents 2> /dev/null
+current_dir="$(pwd)"
+echo "Hello, ${USER^}"
+echo "I will now back up your 'Documents' directory, ${HOME}/Documents"
+echo "Your are running this script form ${current_dir}" 
+echo "Therefore, I will save the backup in ${current_dir}"
+
+tar -cf ${current_dir}/my_backup_$(date +%d-%m-%Y_%H-%M-%S) ~/Documents 2> /dev/null
+echo "Backup done successfully!"
 exit 0
 
