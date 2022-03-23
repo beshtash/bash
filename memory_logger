@@ -1,0 +1,11 @@
+#!/bin/bash
+folder=$HOME/Workspace/bash/performance
+if [ -d $folder ]; then
+	echo "The folder $folder exists."
+else
+	mkdir $folder
+	echo "$folder folder has been created."
+fi
+free --human --total  >> $HOME/Workspace/bash/performance/memory.log
+exit 0
+

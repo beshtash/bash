@@ -1,0 +1,9 @@
+#!/bin/bash
+
+name=simon.smith
+out=output.txt
+
+IFS="."
+echo ${name} > ~/Workspace/bash/"$out"
+
+echo "$(ls *.txt)"

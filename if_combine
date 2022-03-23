@@ -1,0 +1,11 @@
+#!/bin/bash
+
+a=$(cat f1.txt)
+b=$(cat f2.txt)
+c=$(cat f3.txt)
+
+if [ $a = $b ] && [ $a = $c ]; then
+	rm f2.txt f3.txt
+else
+	echo "Files don't match"
+fi
